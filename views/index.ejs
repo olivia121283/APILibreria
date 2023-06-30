@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>Lista de Libros</h1>
+  </div>
+  <div class = "container">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Autor o Autores</th>
+              <th scope="col">Páginas</th>
+              <th scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i=0; i< libros.length; i++) { %>
+            <tr>
+              <th scope="row">1</th>
+              <td><%= libros[i].id %></td>
+              <td><%= libros[i].titulo %></td>
+              <td><%= libros[i].autor %></td>
+              <td><%= libros[i].paginas %></td>
+              <td><%= libros[i].descripcion %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
