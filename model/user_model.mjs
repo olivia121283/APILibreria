@@ -1,8 +1,9 @@
 import { Schema as _Schema, model as _model } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const Schema = _Schema
 
-const user = new Shema ({
+const user = new Schema ({
   userName: {
     type: String,
     unique: true
@@ -22,9 +23,17 @@ const user = new Shema ({
   rol:{
     type: String,
     enum:['user', 'admin'],
-    deafault: 'admin'  }
+    deafault: 'user'  }
 
 })
+ export const encryptPassword= async (password) => {
+  const salt = await bcrypt.genSalt(10)
+  return await bcrypt.hash(password, salt)
+}
+export const comparePassword = async (password, receivedPassword) => {
+  return await bcrypt.compare(password, receivedPassword)
+}
+
 const User = _model('users', user)
 
 export default User;
