@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use(express.json())
 app.use(librosRoute)
 app.use(usersRoutes)
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
  execute()
 
